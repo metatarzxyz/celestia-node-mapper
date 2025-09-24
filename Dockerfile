@@ -21,12 +21,6 @@ RUN yarn install --frozen-lockfile
 COPY src/ ./src/
 
 RUN yarn build
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S celestia -u 1001
-
-RUN chown -R celestia:nodejs /app
-USER celestia
-
 EXPOSE 3000
 
 # Health check
