@@ -422,7 +422,7 @@ export class CelestiaService {
             
             return {
               id: peer.node_info.id,
-              network: peer.node_info.network,
+              network: process.env.NETWORK ? process.env.NETWORK : peer.node_info.network,
               moniker: peer.node_info.moniker,
               ip: peer.remote_ip,
               country: ipGeo.country,
